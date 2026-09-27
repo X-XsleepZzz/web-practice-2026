@@ -1,6 +1,6 @@
-# Job Application Tracker — Phase 10
+# Job Application Tracker
 
-就職活動の企業と応募を管理するFastAPI学習用APIです。Phase 10の状態を保存しています。
+就職活動の企業と応募を管理するFastAPIを用いたアプリケーション
 
 ## 起動
 
@@ -12,7 +12,6 @@ Python 3.13以上、uv、PostgreSQLを使用します。
 4. `uv run uvicorn main:app --reload` で起動します。
 
 APIドキュメント: <http://127.0.0.1:8000/docs>
-ヘルスチェック: `GET /health`（DB接続は確認しません）。
 
 ## 実装範囲
 
@@ -21,5 +20,3 @@ APIドキュメント: <http://127.0.0.1:8000/docs>
 - Pydanticによる入出力検証、SQLAlchemyによるDB操作
 - CompanyとApplicationの1対多、外部キー、企業削除時の応募の連動削除
 - Alembicによるスキーマ変更履歴
-
-`.env`、仮想環境、キャッシュ、ローカルDB、デプロイ用ローカル設定はGitに含めません。認証機能のない学習用APIです。
