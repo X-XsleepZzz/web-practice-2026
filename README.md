@@ -1,4 +1,4 @@
-# Job Application Tracker 
+# Job Application Tracker
 
 就職活動の企業と応募を管理するFastAPIを用いたアプリケーション
 
@@ -12,7 +12,6 @@ Python 3.13以上、uv、PostgreSQLを使用します。
 4. `uv run uvicorn main:app --reload` で起動します。
 
 APIドキュメント: <http://127.0.0.1:8000/docs>
-ヘルスチェック: `GET /health`（DB接続は確認しません）。
 
 ## 実装範囲
 
