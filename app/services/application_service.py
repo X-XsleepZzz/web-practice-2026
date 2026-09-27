@@ -8,7 +8,7 @@ from app.schemas.application import ApplicationCreate, ApplicationUpdate
 def read_applications(
     status: str = "interview",
     limit: int = 10,
-    db: Session = None
+    db: Session
 ):
     valid_status = [
         "interested",
@@ -43,7 +43,7 @@ def read_applications(
 
 def application_create(
     application: ApplicationCreate,
-    db: Session = None
+    db: Session
 ):
     if db.get(Company, application.company_id) is None:
         raise HTTPException(status_code=404, detail="Company not found")
@@ -61,7 +61,7 @@ def application_create(
 def application_update(
     job_id: int,
     application_update: ApplicationUpdate,
-    db: Session = None
+    db: Session
 ):
     stmt = select(Application).where(
         Application.id == job_id
@@ -105,7 +105,7 @@ def application_update(
 
 def delete_application(
     job_id: int,
-    db: Session = None
+    db: Session
 ):
     stmt = select(Application).where(
         Application.id == job_id
